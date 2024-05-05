@@ -10,21 +10,21 @@ using Foreign Key.<br>
 
 1. Vendor Profile Management:<br>
 API Endpoints:<br>
-● POST /api/vendors/   :- Create a new vendor.<br>
-● GET /api/vendors/   :- List all vendors.<br>
-● GET /api/vendors/{vendor_id}/   :- Retrieve a specific vendor's details.<br>
-● PUT /api/vendors/{vendor_id}/   :- Update a vendor's details.<br>
-● DELETE /api/vendors/{vendor_id}/    :- Delete a vendor.<br>
+● POST http://127.0.0.1:8000/api/vendors/create/   :- Create a new vendor.<br>
+● GET http://127.0.0.1:8000/api/vendors/   :- List all vendors.<br>
+● GET http://127.0.0.1:8000/api/vendors/{vendor_code}/   :- Retrieve a specific vendor's details.<br>
+● PUT http://127.0.0.1:8000/api/vendors/update/{vendor_code}/   :- Update a vendor's details.<br>
+● DELETE http://127.0.0.1:8000/api/vendors/delete/{vendor_code}/    :- Delete a vendor.<br>
 
 
 2. Purchase Order Tracking:<br>
 API Endpoints:<br>
-● POST /api/purchase_orders/: Create a purchase order.<br>
-● GET /api/purchase_orders/: List all purchase orders with an option to filter by
+● POST http://127.0.0.1:8000/api/purchase_orders/create/: Create a purchase order.<br>
+● GET http://127.0.0.1:8000/api/purchase_orders/: List all purchase orders with an option to filter by
 vendor.<br>
-● GET /api/purchase_orders/{po_id}/: Retrieve details of a specific purchase order.<br>
-● PUT /api/purchase_orders/{po_id}/: Update a purchase order.<br>
-● DELETE /api/purchase_orders/{po_id}/: Delete a purchase order.<br>
+● GET http://127.0.0.1:8000/api/purchase_orders/{po_number}/: Retrieve details of a specific purchase order.<br>
+● PUT http://127.0.0.1:8000/api/purchase_orders/update/{po_number}/: Update a purchase order.<br>
+● DELETE http://127.0.0.1:8000/api/purchase_orders/delete/{po_number}/: Delete a purchase order.<br>
 
 
 
@@ -37,7 +37,7 @@ Metrics:<br>
 purchase orders.<br>
 ● Fulfilment Rate: Percentage of purchase orders fulfilled without issues.<br>
 API Endpoints:<br>
-● GET /api/vendors/{vendor_id}/performance: Retrieve a vendor's performance
+● GET http://127.0.0.1:8000/api/vendors/{vendor_code}/performance/: Retrieve a vendor's performance
 metrics.<br>
 
 
@@ -65,6 +65,20 @@ Fulfilment Rate:<br>
 ● Calculated upon any change in PO status.<br>
 ● Logic: Divide the number of successfully fulfilled POs (status 'completed'
 without issues) by the total number of POs issued to the vendor.<br>
+<br>
+<br>
 
+<p float="left">
+<img src="post.png" width="500"/>
+<img src="perf1.png" width="500"/>
+</p>
 
+<img src="vs.png" width="500"/>
+
+## To Run -
+
+● pip install django,pymongo,djongo <br>
+● python manage.py makemigration<br>
+● python manage.py migrate<br>
+● python manage.py runserver<br>
 
